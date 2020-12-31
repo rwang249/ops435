@@ -1,0 +1,39 @@
+What is the purpose of using functions in a Python script?
+
+
+Write Python code to define a function called greetings() that when called will greet the user by name and on the next line display the current date. [hint: use the os.system() function to display the current date.]
+
+Why is it useful for functions to accept arguments passed-up upon function execution?
+
+What is the purpose of the import command? What can be the consequence if the import command is not used prior to running a function by name?
+
+Write Python code to declare a function called join() that accepts two arguments which will be be stored as word1 and word2 respectively during the execution of the function.
+
+What is the command to return a value from a function?
+
+What is the purpose of the system() function in the os module?
+
+What is the purpose of a list object?
+
+Assume that the following list has been defined: mylist = [ 'apple', 1, 'grape', 2, 'banana', 3, ]
+Based on that, what will the following contain?
+mylist[0]
+mylist[3]
+mylist[-1]
+mylist[0:1]
+
+Assume that the following list has been defined: combined_list = [ [7, 5], ['x', 'y'], [ 5, 'f' ] ]
+Based on that, what will the following contain?
+combined_list[0]
+combined_list[1]
+combined_list[1][0]
+combined_list[2][0:2]
+
+Briefly explain the purpose of each of the following methods that can be used with lists: append, insert, remove, sort, copy.
+
+Write the functions that perform the following operations on a list:
+Returns the length of the list
+Returns the smallest value in the list
+Returns the largest value in the list
+
+Write a Python script to display all of the items in a simple list, one item per line.
