@@ -1,0 +1,38 @@
+What is a git repository?
+All relevant files related to a project
+
+What kinds of data can be stored in a git repository?
+folders and files, images, videos, spreadsheets, and data sets – anything your project needs
+
+What is a git branch?
+A branch is a copy of an existing source repository and is used to work on multiple versions of a repository
+
+What is the name of the definitive branch in a git repository?
+The definitive branch is called main
+
+What is a "pull request" related to a branch in a git repository?
+A pull request is a way of proposing your changes to a repository and to merge them 
+
+Write Python code that when run, will perform the following tasks:
+  Contain a she-bang line
+  Display a greetings message to the user
+  display an empty line (hint: use the special character \n to print the a new-line character)
+  Display text, "Your current directory is:" (You are NOT required to display quotation marks)
+  Display the current working directory pathname (using an appropriate command)
+  Display another empty line
+  How do you execute a Python script when you are within the interactive python3 shell? (Hint: make use of a function provided by the os python module.)
+  How do you execute a Python script when you are in the Bash Shell (i.e. NOT within the python3 shell)?
+
+#!/usr/bin/env python3
+import os
+
+print('Hello!')
+print('\n')
+print('Your current working directory is:')
+os.getcwd()
+print(\n')
+
+Write the pipeline command to check if the CheckLab1.py checking script exists, and download it from the location:
+https://ict.senecacollege.ca/~raymond.chan/ops435/labs/LabCheckScripts/CheckLab1.py
+
+ls CheckLab1.py || wget https://ict.senecacollege.ca/~raymond.chan/ops435/labs/LabCheckScripts/CheckLab1.py

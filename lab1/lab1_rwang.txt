@@ -1,0 +1,65 @@
+Checking for updates...
+
+ There is a update available for thisCheckLab1.py please consider updating:
+ cd ~/ops435/lab1/
+ pwd  #   <-- i.e. confirm that you are in the correct directory
+ rm CheckLab1.py
+ ls CheckLab1.py || wget https://ict.senecacollege.ca/~raymond.chan/ops435/labs/LabCheckScripts/CheckLab1.py
+
+Press ENTER to run the Lab Check...cat: /etc/redhat-release: No such file or directory
+test_a (__main__.lab0a)
+[Lab 1] - [Investigation 1] - [Task 1] - github repository - Test for git clone ... ok
+test_b0 (__main__.lab0a)
+[Lab 1] - [Investigation 1] - [Task 3] - github repo details: gitlog.txt ... ok
+test_b1 (__main__.lab0a)
+[Lab 1] - [Investigation 1] - [Task 3] - github repo details: repo_tree.txt ... ok
+test_c (__main__.lab0b)
+[Lab 1] - [Investigation 2] - [Part 1] - directories - Test for directory structure creation ... ok
+test_0 (__main__.lab1a)
+[Lab 1] - [Investigation 3] - [Part 2] - printing - Test for file creation: ./lab1a.py ... ok
+test_a (__main__.lab1a)
+[Lab 1] - [Investigation 3] - [Part 2] - printing - Test for errors running: ./lab1a.py ... ok
+test_a1 (__main__.lab1a)
+[Lab 1] - [Investigation 3] - [Part 2] - printing - Test for correct shebang line: ./lab1a.py ... ok
+test_b (__main__.lab1a)
+[Lab 1] - [Investigation 3] - [Part 2] - printing - Test output for correct output "Hello world": ./lab1a.py ... ok
+test_0 (__main__.lab1b)
+[Lab 1] - [Investigation 4] - string objects & printing - Test for file creation: ./lab1b.py ... ok
+test_a (__main__.lab1b)
+[Lab 1] - [Investigation 4] - string objects & printing - Test for errors running: ./lab1b.py ... ok
+test_a1 (__main__.lab1b)
+[Lab 1] - [Investigation 4] - string objects & printing - Test for correct shebang line: ./lab1b.py ... ok
+test_b (__main__.lab1b)
+[Lab 1] - [Investigation 4] - string objects & printing - Test for correct output "How old are you Isaac?": ./lab1b.py ... ok
+test_0 (__main__.lab1c)
+[Lab 1] - [Investigation 4] - integer objects & printing - Test for file creation: ./lab1c.py ... ok
+test_a (__main__.lab1c)
+[Lab 1] - [Investigation 4] - integer objects & printing - Test for errors running: ./lab1c.py ... ok
+test_a1 (__main__.lab1c)
+[Lab 1] - [Investigation 4] - integer objects & printing - Test for correct shebang line: ./lab1c.py ... ok
+test_b (__main__.lab1c)
+[Lab 1] - [Investigation 4] - integer objects & printing - Test output for correct output "Isaac is 72 years old!": ./lab1c.py ... ok
+test_0 (__main__.lab1d)
+[Lab 1] - [Investigation 5] - math operators - Test for file creation: ./lab1d.py ... ok
+test_a (__main__.lab1d)
+[Lab 1] - [Investigation 5] - math operators - Test for errors running: ./lab1d.py ... ok
+test_a1 (__main__.lab1d)
+[Lab 1] - [Investigation 5] - math operators - Test for correct shebang line: ./lab1d.py ... ok
+test_b (__main__.lab1d)
+[Lab 1] - [Investigation 5] - math operators - Test output for correct output "10 + 2 * 5 = 20": ./lab1d.py ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.318s
+
+OK
+OPS435 Lab Report - System Information for running ./CheckLab1.py
+=================================================================
+    User login name: 1000
+    Linux system name: DESKTOP-NDKH9N8
+    Linux system version: 
+    Python executable: /usr/bin/python3
+    Python version: 385
+    OS Platform: linux
+    Working Directory: /home/rwang/ops435/lab1
+    Start at: Sun Dec 27 13:27:11 2020
+=================================================================

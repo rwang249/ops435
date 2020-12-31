@@ -53,7 +53,7 @@ class lab0a(unittest.TestCase):
     """All test cases for lab0a - clone of github repository."""
     def test_a(self):
         """[Lab 1] - [Investigation 1] - [Task 1] - github repository - Test for git clone"""
-        student_id = os.getlogin() 
+        student_id = 'ops435' 
         dirs_required = ['~/ops435/lab1/'+student_id]
         dirs_exist = True
         for d in dirs_required:
@@ -298,7 +298,7 @@ def displayReportHeader():
     report_heading = 'OPS435 Lab Report - System Information for running '+sys.argv[0]
     print(report_heading)
     print(len(report_heading) * '=')
-    print('    User login name:', os.getlogin())
+    print('    User login name:', os.getuid())
     print('    Linux system name:', socket.gethostname())
     print('    Linux system version:',os.popen('cat /etc/redhat-release').read().strip())
     print('    Python executable:',sys.executable)

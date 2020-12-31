@@ -1,0 +1,102 @@
+Write a short Python script to ask the user to provide their shoe size at the keyboard, and store the result in an integer object called shoeSize.
+Add codes to the previous Python script to display the shoe size entered using the same integer object created. (For example: Your shoe size is: 16).
+
+#!/usr/bin/env python3
+
+shoeSize = input('What is your shoe size?')
+print('Your shoe size is: ' + shoeSize)
+
+What is the purpose of importing special module from your system?
+The purpose of importing a special module is so that we can get access to the code in that module.
+
+Write a short Python script to display two arguments from running your Python script.
+
+#!/usr/bin/env python3
+
+import sys
+
+arg1 = sys.argv[1]
+arg2 = sys.argv[2]
+
+print('The first argument is: ' + arg1)
+print('The second argument is ' + arg2)
+
+For example if your Python script was called myscript.py and you issued the command:
+python myscript.py happy afternoon, you would get the following output:
+
+The first argument is: happy
+The second argument is afternoon
+
+
+What is the purpose of using an if statement?
+The purpose of an if statement is to set a condition on which the code following the statement will run under
+
+What is the purpose of using an if-else statement?
+The purpose of an if-else statement is to extend the existing functionality of an existing if statement
+
+Write a short Python script which terminates the execution of the Python script if there are not exactly 3 arguments given at the command line.
+#!/usr/bin/env python3
+
+import sys
+
+arguments = len(sys.argv)
+
+if arguments != 4:
+    sys.exit()
+
+
+What is the purpose of an if-elif-else statement?
+
+
+Write a Python script to prompt the user for a course mark (no error checking is required... you can assume that the input will be a valid mark from 0 to 100). Use an if-elif-else statement to convert the mark to a letter grade. For simplicity, you don't have to worry about D+, C+, B+, or A+
+
+#!/usr/bin/env python3
+
+import sys
+
+mark = sys.argv[1]
+
+if mark < 60:
+    grade = 'D'
+elif mark >= 60 and mark < 70:
+    grade = 'C'
+elif mark >= 70 and mark < 80:
+    grade = 'B'
+else:
+    grade = 'A'
+
+print('Your grade is: ' + grade)
+
+Write a Python script to print the text I love Python twenty times (on a separate line).
+#!/usr/bin/env python3
+
+count = 0
+
+while count != 20
+    print('I love Python')
+    count = count + 1
+
+
+Identify and list the Python 3 keywords used in this lab.
+
+
+Identify and list the Python 3 built-in functions used in this lab. (hint: the functions provided by the __builtins__ module)
+
+INTERESTING CHALLENGE: Perform a Netsearch to see how you can write Python code to perform error-checking (using a loop) to force a user to enter a number for the shoe size script (created in question #2). There are two things to consider:
+A number as opposed to a string
+It has to be an acceptable range from 1 to 20
+
+#!/usr/bin/env python3
+
+
+while True:
+    try:
+        shoeSize = int(input('What is your shoe size?'))
+            if shoeSize < 1 or shoeSize > 20:
+                print('Please enter a valid shoe size(1 to 20)')
+                continue
+    except ValueError:
+        raise ValueError('Please enter a valid shoe size(1 to 20)')
+        continue
+    break
+print('Your shoe size is: ' + shoeSize)
