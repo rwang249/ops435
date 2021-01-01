@@ -1,0 +1,65 @@
+What is the purpose of a tuple? How does a tuple differ from a list?
+A tuple is another data structure that can store multiple types of data. A tuple is different from a list in the fact that it is immutable
+
+How do you define elements within a tuple?
+You define elements with () rather than [] that you would find in a list
+
+Write Python code to confirm if the string 'OPS435' exists within the tuple called courses.
+#!/usr/bin/env python3
+
+def search(courses):
+    print('OPS435' in courses)
+
+What is the purpose of a set? How do sets differ from lists or tuples?
+Sets is a data structure that is unordered and it cannot contain duplicate values
+
+How do you define elements within a set?
+Elements are defined using {}
+
+Assuming you have defined two sets called set1 and set2. Write Python code to:
+Return a set containing all values of both sets
+Returns a set containing all values in set1 that are not found in set2
+Return a set containing all values that both sets DO NOT share
+
+#!/usr/bin/env python3
+print(set1 + set2)
+print(set1.difference(set2))
+print(set1.symmetric_difference(set2))
+
+What is the purpose of a dictionary?
+A set is a data structure that is unordered, but can be useful in that you can grab any value as long as you know the key, rather than refering to index.
+
+How do you define elements within a dictionary?
+Elements can be defined using {}, but each index is key value pair. 
+
+Write Python commands to display for a dictionary called my_dictionary the dictionary key called my_key and a dictionary value for that key?
+#!/usr/bin/env python3
+
+print(my_dictionary['my_key'])
+
+What is the purpose for the range(), len(), append(), and map() functions for a dictionary?
+
+range() - can be used to generate key:value in a dictionary
+len() - return number of key:value pairs
+append() - add key value pair to end of dictionary
+map() - run a function within each item in an iterable
+
+List and briefly explain the following string methods:
+lower() , upper() , swapcase() , title() , captilize() , split()
+lower() - change string to all lowercase
+upper() - change string to all uppercase
+swapcase() - swap case on all characters in a string
+title - change first letter of each string to capital
+captilize - change first word's first letter to capital
+
+Assume you issued the following command in your ipython3 shell:
+course_name = 'Programming with Python'
+What will be the output for each of the following Python commands?
+course_name[3:11] - gramming
+course_name[10:] - ng
+course_name[-1] - g
+
+Create a string object text = "Seneca" in the Python Interactive shell and study the string methods: text.find(), text.count() using the built-in help() function.
+
+text.find() - find index of argument
+text.count() - count number of argument occurances
