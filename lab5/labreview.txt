@@ -1,0 +1,49 @@
+What is the purpose of a file object?
+The purpose of a file object is that it allows you to access files. An object is a storage location which stores data.
+
+Write a Python command to open the text file called customers.txt for read-only operations.
+f = open(customer.txt, 'r')
+
+Write Python code to efficiently store the contents of the file in question #2 as a large string (including new-line characters) called customer-data.
+customer-data = f.read()
+
+Write Python code to store the contents of the file in question #2 as a list, removing the new-line characters.
+f.read().splitlines()
+
+What is the purpose of closing an open file? Write a Python command to close the file opened in question #2.
+Closing an open file is to free up computer resources. 
+f.close()
+
+Write the Python command to confirm you successfully closed the customers.txt file in question #5. What is the returned status from that command to indicate that the file has been closed?
+f = open(customers.txt)
+
+What is the difference between opening a file for writing data as opposed to opening a file for appending data? What can be the consequence if you don't understand the difference between writing and appending data?
+Opening a file for writing data overwrites the existing file. Opening it for appending will add to the end of the file. Closing can avoid corrupted or missing file contents when writing.
+
+Write a Python command to open the file customer-data.txt for writing data.
+f1 = open(customer-data.txt, 'w')
+
+Write a Python command to save the text: customer 1: Guido van Rossum (including a new-line character) to the opened file called customer-data.txt
+f1 = open(customer-data.txt, 'w')
+f1.write('customer 1: Guido van Rossum\n')
+f1.close()
+
+Briefly explain the process writing a list as separate lines to an open file.
+open a file with write mode.
+store the list into a variable
+iterate through each index in the list and write separately to the file.
+close the file.
+
+What is the purpose of handling exception errors?
+Handling exception errors provides a way of running different steps in your code according to the error that was encountered
+
+Write a Python script to prompt a user for the name of the file to open. Use exception error handling to provide an error message that the specific file name (display that exact name) does not exist; otherwise, open the file for reading and display the entire contents of the file (line-by-line).    
+#!/usr/bin/env python3
+
+file = input('please provide name of file to open')
+try:
+    f = open(file, 'r')
+    content = f.read()
+    print(content)
+except:
+    print('file ' + file + 'does not exist')
