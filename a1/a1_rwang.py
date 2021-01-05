@@ -20,6 +20,17 @@ def leap_year(obj):
     The leap_year() function will take a year in "YYYY" format, and return True 
     if the given year is a leap year, otherwise return False.
     '''
+    year = str(obj[0:4])
+    if (year % 4) == 0:
+        if (year % 100) == 0:
+            if (year % 400) == 0:
+                status = 'True'
+            else:
+                status = 'False'
+        else:
+            status = 'False'
+    else:
+        status = 'False'
 
     return status
 
