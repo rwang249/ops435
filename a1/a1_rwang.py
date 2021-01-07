@@ -4,13 +4,7 @@
 OPS435 Assignment 1 - Fall 2020
 Program: a1_rwang.py 
 Author: Raphael Wang
-The python code in this file (a1_rwang.py) is original work written by
-Raphael Wang. No code in this file is copied from any other source 
-except those provided by the course instructor, including any person, 
-textbook, or on-line resource. I have not shared this python script 
-with anyone or anything except for submission for grading.  
-I understand that the Academic Honesty Policy will be enforced and 
-violators will be reported and appropriate action will be taken.
+Done for personal learning. Only os and sys modules were allowed
 '''
 import os
 import sys
@@ -80,7 +74,7 @@ def usage():
     '''
     scriptName = sys.argv[0]
     status = 'Usage: ' + scriptName + ' YYYYMMDD|YYYY/MM/DD|YYYY-MM-DD|YYYY.MM.DD'
-    
+
     return status
 
 if __name__ == "__main__":
