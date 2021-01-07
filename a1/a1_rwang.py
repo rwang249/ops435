@@ -24,13 +24,13 @@ def leap_year(obj):
     if (year % 4) == 0:
         if (year % 100) == 0:
             if (year % 400) == 0:
-                status = 'True'
+                status = True
             else:
-                status = 'False'
+                status = False
         else:
-            status = 'False'
+            status = False
     else:
-        status = 'False'
+        status = False
 
     return status
 
@@ -52,8 +52,12 @@ def size_check(obj, intobj):
     The size_check() function will take an collection data type object and expected number of items as an integer and will return either 'True' or 'False'. 
     If the number of items in the data object match the integer value given, return 'True', otherwise return 'False'
     '''
-    ...
-
+    length = len(obj)
+    if length == intobj:
+        status = True
+    else:
+        status = False
+    
     return status
 
 def range_check(obj1, obj2):
@@ -91,11 +95,11 @@ if __name__ == "__main__":
    allow_chars = '0123456789'
    dob = sanitize(user_raw_data, allow_chars)
    print('Sanitized user data:', dob)
-#    # step 4
-#    result = size_check(dob,8)
-#    if result == False:
-#        print("Error 09: wrong data entered")
-#        sys.exit()
+   # step 4
+   result = size_check(dob,8)
+   if result == False:
+       print("Error 09: wrong data entered")
+       sys.exit()
 #    # step 5
 #    year = int(dob[0:4])
 #    month = int(dob[4:6])
