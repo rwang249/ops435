@@ -4,32 +4,39 @@
 OPS435 Assignment 1 B - Fall 2020
 Program: a1_rwang.py 
 Author: Raphael Wang
-Done for personal learning. Only os, subprocess, and sys modules were allowed.
+Done for personal learning. Only os, subprocess, and sys modules were allowed. For some reason dictionaries were not allowed
 Alternate assignment option
 '''
 import os
 import sys
 import subprocess
 
+dfcount = 0
+
 def call_df():
     '''
     should take no arguments return a list of strings returned by the shell command.
     Output is filtered to omit any lines that contain loop or tmpfs. These are not proper file systems and should not be displayed.
     '''
+    dfList = []
     process = subprocess.Popen(['df'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     communicate = process.communicate()
     output = communicate[0].decode('utf-8')
     listOutput = output.split('\n')
-    count = 0
 
     # loop through listOutput and if file system is tmpfs or loop do not put into santized list for return
     for string in listOutput:
-        fs = string.split(' ')
-        if fs[0] == 'tmpfs' or fs[0] == 'loop':
-            del listOutput[count]
-        count = count + 1
+        fs = string.split()
+        if len(string) == 0:
+            continue
+        else:
+            if fs[0] == 'tmpfs' or fs[0] == 'loop' or fs[0] == 'Filesystem':
+                continue
+            else:
+                dfList.append(fs[0])
+                dfList.append(fs[4])
     
-    return listOutput
+    return dfList
 
 def call_free():
     '''
@@ -79,6 +86,20 @@ def call_hostname():
 
     return hostname
 
+def call_release():
+    '''
+    should take no arguments, and should return strings from the shell.
+    '''
+    # call subprocess to grab output of uname -r in pretty format, decode to utf-8 and split per line
+    process = subprocess.Popen(['uname -r'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    communicate = process.communicate()
+    output = communicate[0].decode('utf-8').split('\n')
+
+    #assign release and return
+    release = output[0]
+
+    return release
+
 def call_uptime():
     '''
     should take no arguments, and should return strings from the shell.
@@ -117,6 +138,19 @@ def percent_to_graph(percent):
         else:
             graphList.append(']')
             count = count + 1
+    
+    count = 0
+
+    while count != 4:
+        if count == 3:
+            graphList.append('%')
+            count = count + 1
+        elif count == 1:
+            graphList.append(str(percent))
+            count = count + 1 
+        else:
+            graphList.append(' ')
+            count = count + 1
 
     # convert list to string and return
     graph = ''.join(graphList)
@@ -127,11 +161,34 @@ def print_percent_line(name, percent):
     '''
     will print a properly formatted line
     '''
+    print(str(name) + '{:<5}'.format(' ') + str(percent))
 
-    return output
+df = call_df()
+memory = call_free()
+hostname = call_hostname()
+release = call_release()
+uptime = call_uptime()
 
-#call_df()
-#call_free()
-#call_hostname()
-#call_uptime()
-#percent_to_graph()
+fsNum = len(df) / 2
+memNum = len(memory)
+
+print('Hostname: ' + hostname)
+print('Kernel Release: ' + release)
+print('Uptime: ' + uptime)
+print('----------------------------------------')
+
+while dfcount != fsNum:
+    percent = df[1].replace('%', '')
+    print_percent_line(df[0], percent_to_graph(int(percent)))
+    del df[1]
+    del df[0]
+    dfcount = dfcount + 1
+
+print('----------------------------------------')
+
+print_percent_line('Mem', percent_to_graph(int(memory[0])))
+del memory[0]
+print_percent_line('Swap', percent_to_graph(int(memory[0])))
+del memory[0]
+
+# print(df)
