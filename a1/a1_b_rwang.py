@@ -139,8 +139,10 @@ def percent_to_graph(percent):
             graphList.append(']')
             count = count + 1
     
+    #reset count for subsequent use
     count = 0
 
+    # append percentage
     while count != 4:
         if count == 3:
             graphList.append('%')
@@ -161,17 +163,22 @@ def print_percent_line(name, percent):
     '''
     will print a properly formatted line
     '''
-    print(str(name) + '{:<5}'.format(' ') + str(percent))
 
+    line = "{0:<12}{1}".format(name,str(percent))
+    print(line)
+
+
+# assign output from modules for later use
 df = call_df()
 memory = call_free()
 hostname = call_hostname()
 release = call_release()
 uptime = call_uptime()
 
+# calculate number of pairs(fs and percentage used)
 fsNum = len(df) / 2
-memNum = len(memory)
 
+# print output
 print('Hostname: ' + hostname)
 print('Kernel Release: ' + release)
 print('Uptime: ' + uptime)
@@ -187,8 +194,4 @@ while dfcount != fsNum:
 print('----------------------------------------')
 
 print_percent_line('Mem', percent_to_graph(int(memory[0])))
-del memory[0]
-print_percent_line('Swap', percent_to_graph(int(memory[0])))
-del memory[0]
-
-# print(df)
+print_percent_line('Swap', percent_to_graph(int(memory[1])))
