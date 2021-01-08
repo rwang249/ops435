@@ -69,6 +69,13 @@ def call_hostname():
     '''
     should take no arguments, and should return strings from the shell.
     '''
+    # call subprocess to grab output of hostname, decode to utf-8 and split per line
+    process = subprocess.Popen(['hostname'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    communicate = process.communicate()
+    output = communicate[0].decode('utf-8').split('\n')
+    
+    #assign hostname and return
+    hostname = output[0]
 
     return hostname
 
@@ -76,6 +83,13 @@ def call_uptime():
     '''
     should take no arguments, and should return strings from the shell.
     '''
+    # call subprocess to grab output of uptime in pretty format, decode to utf-8 and split per line
+    process = subprocess.Popen(['uptime -p'], stdout=subprocess.PIPE, stdin=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    communicate = process.communicate()
+    output = communicate[0].decode('utf-8').split('\n')
+
+    #assign uptime and return
+    uptime = output[0]
 
     return uptime
 
@@ -84,8 +98,30 @@ def percent_to_graph(percent):
     will take an integer 'percent' and return a bar graph that represents this percentage. 
     The bar graph should begin with '[', and end with ']'. Then contents inside should be 20 characters long.
     '''
+    # initialize variables
+    count = 0
+    graphList = ['[']
 
-    return output
+    # calculate how many = characters will be in graph
+    toFill = percent / 5
+
+    # create graph list
+    while count != 21:
+        if int(toFill) != 0:
+            graphList.append('=')
+            count = count + 1
+            toFill = int(toFill) - 1
+        elif toFill == 0 and count != 20:
+            graphList.append(' ')
+            count = count + 1
+        else:
+            graphList.append(']')
+            count = count + 1
+
+    # convert list to string and return
+    graph = ''.join(graphList)
+
+    return graph
 
 def print_percent_line(name, percent):
     '''
@@ -96,3 +132,6 @@ def print_percent_line(name, percent):
 
 #call_df()
 #call_free()
+#call_hostname()
+#call_uptime()
+#percent_to_graph()
