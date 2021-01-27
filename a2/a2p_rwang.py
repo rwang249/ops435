@@ -18,6 +18,8 @@ violators will be reported and appropriate action will be taken.
 
 class Date:
 
+    global month_name
+    global days_in_month
     month_name = ['Jan','Feb','Mar','Apr','May','Jun',
                 'Jul','Aug','Sep','Oct','Nov','Dec']
     days_in_month = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30,
@@ -51,9 +53,17 @@ class Date:
     def __str__(self):
         return '%.4d/%.2d/%.2d' % (self.year, self.month, self.day)
     
-    def __add__(self, tomorrow):
-
-        return self.next_day
+    def __add__(self, day_increase):
+        self.day = self.day + day_increase
+        if self.day > days_in_month[self.month]:
+            self.month = self.month + 1
+            self.day = 1
+            new_day = self.day - days_in_month[self.month] 
+            if self.month == 13:
+                self.month == 1
+                self.year = self.year + 1
+        
+        return self
     
     def __sub__(self, yesterday):
 
